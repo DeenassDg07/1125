@@ -98,9 +98,9 @@ namespace _1125.Model
 
             if (connection.OpenConnection())
             {
-                var mc = connection.CreateCommand($"update `Clients` set `Fname`=@fname, `Lname`=@lname where `id` = {edit.ID}");
-                mc.Parameters.Add(new MySqlParameter("fname", edit.FirstName));
-                mc.Parameters.Add(new MySqlParameter("lname", edit.LastName));
+                var mc = connection.CreateCommand($"update `user` set `login`=@Login, `password`=@Password where `id` = {edit.ID}");
+                mc.Parameters.Add(new MySqlParameter("Login", edit.login));
+                mc.Parameters.Add(new MySqlParameter("Password", edit.password));
 
                 try
                 {
@@ -117,7 +117,7 @@ namespace _1125.Model
         }
 
 
-        internal bool Remove(Client remove)
+        internal bool Remove(User remove)
         {
             bool result = false;
             if (connection == null)
@@ -125,7 +125,7 @@ namespace _1125.Model
 
             if (connection.OpenConnection())
             {
-                var mc = connection.CreateCommand($"delete from `Clients` where `id` = {remove.ID}");
+                var mc = connection.CreateCommand($"delete from `user` where `id` = {remove.id}");
                 try
                 {
                     mc.ExecuteNonQuery();
@@ -140,11 +140,11 @@ namespace _1125.Model
             return result;
         }
 
-        static ClientsDB db;
-        public static ClientsDB GetDb()
+        static UserDB db;
+        public static UserDB GetDb()
         {
             if (db == null)
-                db = new ClientsDB(DbConnection.GetDbConnection());
+                db = new UserDB(DbConnection.GetDbConnection());
             return db;
         }
     }
