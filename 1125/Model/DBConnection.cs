@@ -14,6 +14,7 @@ namespace _1125.Model
 
         public void Config()
         {
+
             MySqlConnectionStringBuilder sb = new MySqlConnectionStringBuilder();
             sb.UserID = "student";
             sb.Password = "student";
@@ -69,5 +70,7 @@ namespace _1125.Model
                 dbConnection = new DbConnection();
             return dbConnection;
         }
+
+
     }
 }

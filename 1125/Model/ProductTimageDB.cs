@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1125.Model
 {
-    public class User
+    internal class ProductTimageDB
     {
-        public int Id { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
     }
 }

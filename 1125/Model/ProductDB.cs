@@ -1,23 +1,24 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySqlConnector;
 using System.Windows;
 
 namespace _1125.Model
 {
-    internal class UserDB
+    internal class ProductDB
     {
         DbConnection connection;
 
-        private UserDB(DbConnection db)
+        private ProductDB(DbConnection db)
         {
             this.connection = db;
         }
 
-        public bool Insert(User user)
+        public bool Insert(Product product)
         {
             bool result = false;
             if (connection == null)
@@ -25,18 +26,22 @@ namespace _1125.Model
 
             if (connection.OpenConnection())
             {
-                MySqlCommand cmd = connection.CreateCommand("insert into `user` Values (0, @login, @password);select LAST_INSERT_ID();");
-                cmd.Parameters.Add(new MySqlParameter("login", user.Login));
-                cmd.Parameters.Add(new MySqlParameter("password", user.Password));
-                
+                MySqlCommand cmd = connection.CreateCommand("insert into `product` Values (0, @name, @description, @availability, @price);select LAST_INSERT_ID();");
+
+   
+                cmd.Parameters.Add(new MySqlParameter("name", product.Name));
+                cmd.Parameters.Add(new MySqlParameter("description", product.Description));
+                cmd.Parameters.Add(new MySqlParameter("availability", product.Availability));
+                cmd.Parameters.Add(new MySqlParameter("price", product.Price));  
                 try
                 {
-
+                  
                     int id = (int)(ulong)cmd.ExecuteScalar();
                     if (id > 0)
                     {
                         MessageBox.Show(id.ToString());
-                        user.Id = id;
+
+                        product.Id = id;
                         result = true;
                     }
                     else
@@ -53,30 +58,34 @@ namespace _1125.Model
             return result;
         }
 
-        internal List<User> SelectAll()
+        internal List<Product> SelectAll()
         {
-            List<User> users = new List<User>();
+            List<Product> clients = new List<Product>();
             if (connection == null)
-                return users;
+                return clients;
 
             if (connection.OpenConnection())
             {
-                var command = connection.CreateCommand("select `id`, `login`, `password` from `user` ");
+                var command = connection.CreateCommand("select `id`, `name`, `description`, `availability`, `price` from `product` ");
                 try
                 {
+
                     MySqlDataReader dr = command.ExecuteReader();
+
                     while (dr.Read())
                     {
                         int id = dr.GetInt32(0);
-                        string login = string.Empty;
+                        string description = string.Empty;
+
                         if (!dr.IsDBNull(1))
-                            login = dr.GetString("login");
-                        string password = dr.GetString("password");
-                        users.Add(new User
+                            description = dr.GetString("description");
+                        string name = dr.GetString("name");
+                        int availability = dr.GetInt32("availability");
+                        decimal price = dr.GetDecimal("price");
+                        clients.Add(new Product
                         {
                             Id = id,
-                            Login = login,
-                            Password = password
+                            
                         });
                     }
                 }
@@ -86,10 +95,10 @@ namespace _1125.Model
                 }
             }
             connection.CloseConnection();
-            return users;
+            return clients;
         }
 
-        internal bool Update(User edit)
+        internal bool Update(Product edit)
         {
             bool result = false;
             if (connection == null)
@@ -97,10 +106,11 @@ namespace _1125.Model
 
             if (connection.OpenConnection())
             {
-                var mc = connection.CreateCommand($"update `user` set `login`=@login, `password`=@password where `id` = {edit.Id}");
-                mc.Parameters.Add(new MySqlParameter("login", edit.Login));
-                mc.Parameters.Add(new MySqlParameter("password", edit.Password));
-
+                var mc = connection.CreateCommand($"update `product` set `name`=@name, `description`=@description, `availability`=@availability, `price`=@price where `id` = {edit.Id}");
+                mc.Parameters.Add(new MySqlParameter("name", edit.Name));
+                mc.Parameters.Add(new MySqlParameter("description", edit.Description));
+                mc.Parameters.Add(new MySqlParameter("availability", edit.Availability));
+                mc.Parameters.Add(new MySqlParameter("price", edit.Price));
                 try
                 {
                     mc.ExecuteNonQuery();
@@ -116,7 +126,7 @@ namespace _1125.Model
         }
 
 
-        internal bool Remove(User remove)
+        internal bool Remove(Product remove)
         {
             bool result = false;
             if (connection == null)
@@ -124,7 +134,7 @@ namespace _1125.Model
 
             if (connection.OpenConnection())
             {
-                var mc = connection.CreateCommand($"delete from `user` where `id` = {remove.Id}");
+                var mc = connection.CreateCommand($"delete from `product` where `id` = {remove.Id}");
                 try
                 {
                     mc.ExecuteNonQuery();
@@ -139,11 +149,11 @@ namespace _1125.Model
             return result;
         }
 
-        static UserDB db;
-        public static UserDB GetDb()
+        static ProductDB db;
+        public static ProductDB GetDb()
         {
             if (db == null)
-                db = new UserDB(DbConnection.GetDbConnection());
+                db = new ProductDB (DbConnection.GetDbConnection());
             return db;
         }
     }
