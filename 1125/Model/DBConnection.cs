@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace _1125.Model
 {
-    internal class DbConnection
+    internal class DBConnection
     {
         MySqlConnection _connection;
 
@@ -62,12 +62,12 @@ namespace _1125.Model
         }
 
 
-        static DbConnection dbConnection;
-        private DbConnection() { }
-        public static DbConnection GetDbConnection()
+        static DBConnection dbConnection;
+        private DBConnection() { }
+        public static DBConnection GetDbConnection()
         {
             if (dbConnection == null)
-                dbConnection = new DbConnection();
+                dbConnection = new DBConnection();
             return dbConnection;
         }
 

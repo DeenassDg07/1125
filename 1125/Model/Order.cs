@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace _1125.Model
 {
-    internal class ProductTimageDB
+    internal class Order
     {
-
+        public int Id { get; set; }
+        public DateTime DateOrder { get; set; }
     }
 }

@@ -10,9 +10,9 @@ namespace _1125.Model
 {
     internal class UserDB
     {
-        DbConnection connection;
+        DBConnection connection;
 
-        private UserDB(DbConnection db)
+        private UserDB(DBConnection db)
         {
             this.connection = db;
         }
@@ -143,7 +143,7 @@ namespace _1125.Model
         public static UserDB GetDb()
         {
             if (db == null)
-                db = new UserDB(DbConnection.GetDbConnection());
+                db = new UserDB(DBConnection.GetDbConnection());
             return db;
         }
     }

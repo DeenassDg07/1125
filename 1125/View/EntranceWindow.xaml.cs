@@ -23,5 +23,6 @@ namespace _1125.View
         {
             InitializeComponent();
         }
+        
     }
 }

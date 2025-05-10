@@ -11,6 +11,10 @@ namespace _1125.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Image Data { get; set; }
+        public class Data
+        {
+            Data[] imageData = new Data[1];
+        }
     }
 }
+  

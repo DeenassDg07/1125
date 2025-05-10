@@ -85,7 +85,10 @@ namespace _1125.Model
                         clients.Add(new Product
                         {
                             Id = id,
-                            
+                            Description = description,
+                            Name = name,
+                            Availability = availability,
+                            Price = price
                         });
                     }
                 }

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace _1125.Model
 {
-    internal class ProductTimageDB
+    internal class OrderComposition
     {
-
+        public int Id { get; set; }
+        public decimal Price { get; set; }
+        public int Quantita { get; set; }
     }
 }
