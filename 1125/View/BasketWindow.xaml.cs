@@ -15,23 +15,13 @@ using System.Windows.Shapes;
 namespace _1125.View
 {
     /// <summary>
-    /// Логика взаимодействия для EntranceWindow.xaml
+    /// Логика взаимодействия для BasketWindow.xaml
     /// </summary>
-    public partial class EntranceWindow : Window
+    public partial class BasketWindow : Window
     {
-        public EntranceWindow()
+        public BasketWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            EntranceWindow entranceWindow = new RegistrationWindow();
-        }
-
-        public static implicit operator EntranceWindow(RegistrationWindow v)
-        {
-            throw new NotImplementedException();
         }
     }
 }

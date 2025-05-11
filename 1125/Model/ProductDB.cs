@@ -11,9 +11,9 @@ namespace _1125.Model
 {
     internal class ProductDB
     {
-        DbConnection connection;
+        DBConnection connection;
 
-        private ProductDB(DbConnection db)
+        private ProductDB(DBConnection db)
         {
             this.connection = db;
         }
@@ -156,7 +156,7 @@ namespace _1125.Model
         public static ProductDB GetDb()
         {
             if (db == null)
-                db = new ProductDB (DbConnection.GetDbConnection());
+                db = new ProductDB (DBConnection.GetDbConnection());
             return db;
         }
     }

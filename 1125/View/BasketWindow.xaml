@@ -1,0 +1,25 @@
+﻿<Window x:Class="_1125.View.BasketWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_1125.View"
+        mc:Ignorable="d"
+        Title="BasketWindow" Height="450" Width="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition  />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Общая сумма:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Foreground="#2027BC" FontSize="20"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Height="35" Width="170"/>
+        <Button Grid.Row="2" Grid.Column="3" Height="35" Width="170" Content="Войти" Foreground="White" Background="#FF2027BC"/>
+    </Grid>
+</Window>
