@@ -8,15 +8,36 @@
         Title="RegistrationWindow" Height="350" Width="350">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <TextBlock Text ="{Binding Login}" FontSize="20" Foreground="#FF555555" Height="40" Grid.Row ="0" Width="250" VerticalAlignment="Bottom" HorizontalAlignment="Center"  />
-        <TextBlock Text ="{Binding Password}" FontSize="20" Foreground="#FF555555" Height="40" Grid.Row ="1" Width="250" />
-        <TextBlock Text ="{Binding Password2}"  FontSize="20" Foreground="#FF555555" Height="40" Grid.Row ="2" Width="250" />
-        <Button BorderThickness="0" Click="Button_Click"  Content="Войти" Foreground="White" FontSize="20" Grid.Row ="3" Background="#FF2027BC" Width="250" Height="40" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text ="{Binding Login}" FontSize="20" Foreground="#FF555555" Height="40" Grid.Column="1" Grid.Row ="1" Width="250" VerticalAlignment="Bottom" HorizontalAlignment="Center"  />
+        <TextBlock Text ="{Binding Password}" FontSize="20" Foreground="#FF555555" Grid.Column="1" Grid.Row ="2" Height="40" Width="250" />
+        <TextBlock Text ="{Binding Password2}"  FontSize="20" Foreground="#FF555555" Height="40"  Grid.Column="1" Grid.Row ="3" Width="250" />
+        <Button BorderThickness="0" Click="Button_Click"  Content="Войти" Foreground="White" FontSize="20"  Grid.Column="1" Grid.Row ="4" Background="#FF2027BC" Width="250" Height="40" VerticalAlignment="Top">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+        Background="{TemplateBinding Background}"
+        BorderBrush="{TemplateBinding BorderBrush}"
+        BorderThickness="{TemplateBinding BorderThickness}"
+        CornerRadius="20">
+                        <ContentPresenter 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
     </Grid>
 </Window>

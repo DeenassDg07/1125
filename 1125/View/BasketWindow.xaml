@@ -8,18 +8,52 @@
         Title="BasketWindow" Height="450" Width="700">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="140"/>
-            <ColumnDefinition  />
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="130"/>
             <ColumnDefinition />
             <ColumnDefinition />
+            <ColumnDefinition Width="167"/>
+            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
             <RowDefinition />
             <RowDefinition Height="15"/>
             <RowDefinition Height="60"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Общая сумма:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Foreground="#2027BC" FontSize="20"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Height="35" Width="170"/>
-        <Button Grid.Row="2" Grid.Column="3" Height="35" Width="170" Content="Войти" Foreground="White" Background="#FF2027BC"/>
-    </Grid>
+        <TextBlock Text="Общая сумма:" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#2027BC" FontSize="20"/>
+        <TextBox Grid.Row="3" Grid.Column="2" Height="35" Width="165" VerticalAlignment="Center" />
+        <Button Grid.Row="3" Grid.Column="4" Height="35" Width="165" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Content="Войти" Foreground="White" Background="#FF2027BC">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="20">
+                        <ContentPresenter 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Grid.Row="3" Grid.Column="3" Height="35" Width="165" VerticalAlignment="Center" HorizontalAlignment="Right
+                " FontSize="20" Content="Назад" Foreground="White" Background="#FF2027BC">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+    Background="{TemplateBinding Background}"
+    BorderBrush="{TemplateBinding BorderBrush}"
+    BorderThickness="{TemplateBinding BorderThickness}"
+    CornerRadius="20">
+                        <ContentPresenter 
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            </Button>
+    </Grid >
 </Window>

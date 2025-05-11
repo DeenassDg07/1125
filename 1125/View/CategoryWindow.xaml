@@ -6,22 +6,26 @@
         xmlns:local="clr-namespace:_1125.View"
         mc:Ignorable="d"
         Title="CategoryWindow" Height="400" Width="300">
-    <Grid Margin="0,0,0,2">
+    <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition />
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-
-        <Button Content="Пылесос"  Grid.Row="1" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
-        <Button Content="Микроволновка" Grid.Row="2" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
-        <Button Content="Холодильник" Grid.Row="3" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
-        <Button Content="Телевизор" Grid.Row="4" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
-        <Button Content="Телефон" Grid.Row="5" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Пылесос" Grid.Column="1"  Grid.Row="1" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
+        <Button Content="Микроволновка" Grid.Column="1"  Grid.Row="2" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
+        <Button Content="Холодильник" Grid.Column="1"  Grid.Row="3" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
+        <Button Content="Телевизор" Grid.Column="1"  Grid.Row="4" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
+        <Button Content="Телефон" Grid.Column="1"  Grid.Row="5" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
 
     </Grid>
 </Window>
