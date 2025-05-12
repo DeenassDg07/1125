@@ -51,7 +51,7 @@
             <ListBox Grid.Row="3"  Grid.RowSpan="4"  Grid.Column="1" Grid.ColumnSpan="4">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Image Grid.Row="3" Grid.Column="1" Height="100"/>
+                       
                         
                     </DataTemplate>
                 </ListBox.ItemTemplate>
