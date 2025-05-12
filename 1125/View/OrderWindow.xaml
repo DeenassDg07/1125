@@ -6,22 +6,20 @@
         xmlns:local="clr-namespace:_1125.View"
         mc:Ignorable="d"
         Title="OrderWindow" Height="120" Width="300">
+    <Border BorderBrush="#2027BC" BorderThickness="10">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20" />
             <ColumnDefinition Width="140"/>
-            <ColumnDefinition />
-            <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition Height="20"/>
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="Ваш заказ приедет:" Foreground="#2027BC" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="138"/>
-        <DataGrid Grid.Row="1" Grid.Column="2" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        <Button BorderThickness="0" Content="отмена" Grid.Row="2" Grid.Column="1" Width="100" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Background="#FF2027BC" Foreground="White" />
-        <Button BorderThickness="0" Content="ок" Grid.Row="2" Grid.Column="2" Width="100" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Background="#FF2027BC" Foreground="White" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Ваш заказ приедет:" Foreground="#2027BC" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right" Width="138"/>
+        <DataGrid Grid.Row="0" Grid.Column="1" Height="25" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button BorderThickness="0" Content="отмена" Grid.Row="1" Grid.Column="0" Width="100" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FF2027BC" Foreground="White" />
+        <Button BorderThickness="0" Content="ок" Grid.Row="2" Grid.Column="2" Width="100" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"  Background="#FF2027BC" Foreground="White" />
     </Grid>
+        </Border>
 </Window>

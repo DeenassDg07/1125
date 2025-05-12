@@ -5,57 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_1125.View"
         mc:Ignorable="d"
-        Title="CategoryWindow" Height="400" Width="300">
-    <Grid >
+        Title="CategoryWindow" Height="370" Width="250">
+    <Border BorderBrush="#2027BC" BorderThickness="15">
+        <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition />
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="1"  Grid.Row="1" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
+        <Button  Grid.Row="0" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
             <TextBlock>
                 <Underline>
                     Пылесос
                 </Underline>
             </TextBlock>
         </Button>
-        <Button Grid.Column="1"  Grid.Row="2" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
+        <Button  Grid.Row="1" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
             <TextBlock>
         <Underline>
             Микроволновка
         </Underline>
             </TextBlock>
         </Button>
-        <Button  Grid.Column="1"  Grid.Row="3" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
+        <Button   Grid.Row="2" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
             <TextBlock>
     <Underline>
     Холодильник
     </Underline>
         </TextBlock>
         </Button>
-        <Button  Grid.Column="1"  Grid.Row="4" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
+        <Button    Grid.Row="3" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
             <TextBlock>
     <Underline>
         Телевизор
     </Underline>
             </TextBlock>
         </Button>
-        <Button Grid.Column="1"  Grid.Row="5" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
-            <TextBlock>
+            <Button Grid.Column="1"  Grid.Row="5" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
+                <TextBlock>
     <Underline>
      Телефон
     </Underline>
-            </TextBlock>
-        </Button>
-
-    </Grid>
+                </TextBlock>
+            </Button>
+        </Grid>
+        </Border>
 </Window>

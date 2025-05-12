@@ -23,15 +23,5 @@ namespace _1125.View
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            EntranceWindow entranceWindow = new RegistrationWindow();
-        }
-
-        public static implicit operator EntranceWindow(RegistrationWindow v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
