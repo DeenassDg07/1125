@@ -19,11 +19,15 @@
             </Grid.ColumnDefinitions>
             <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center">
                 <TextBlock Text="Логин:" Foreground="#FF555555" FontSize="20" />
+                <Border BorderBrush="#2027BC" BorderThickness="4">
                 <TextBox Text="{Binding Login}"  Height="40" Grid.Column="0" Grid.Row ="0" Width="200"/>
+                    </Border>
             </StackPanel>
             <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="1" Grid.Row ="1">
                 <TextBlock Text="Пароль:" Foreground="#FF555555" FontSize="20" />
+                <Border BorderBrush="#2027BC" BorderThickness="4">
                 <TextBox Text="{Binding Password}"  Height="40"  Width="200"/>
+                    </Border>
             </StackPanel>
             <Button BorderThickness="0" VerticalAlignment="Bottom" Content="Войти" Foreground="White" Background="#FF2027BC" FontSize="20" Grid.Column="1" Grid.Row ="2"  Width="170" Height="40">
                 <Button.Template>
