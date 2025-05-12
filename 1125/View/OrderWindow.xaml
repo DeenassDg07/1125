@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Ваш заказ приедет:" Foreground="#2027BC" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="138"/>
         <DataGrid Grid.Row="1" Grid.Column="2" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        <Button Content="отмена" Grid.Row="2" Grid.Column="1" Width="100" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Background="#FF2027BC" Foreground="White" />
-        <Button Content="ок" Grid.Row="2" Grid.Column="2" Width="100" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Background="#FF2027BC" Foreground="White" />
+        <Button BorderThickness="0" Content="отмена" Grid.Row="2" Grid.Column="1" Width="100" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Background="#FF2027BC" Foreground="White" />
+        <Button BorderThickness="0" Content="ок" Grid.Row="2" Grid.Column="2" Width="100" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Background="#FF2027BC" Foreground="White" />
     </Grid>
 </Window>

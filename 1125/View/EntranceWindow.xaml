@@ -20,8 +20,8 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="{Binding Login}"  FontSize="20" Foreground="#FF555555" Height="40" Grid.Column="1" Grid.Row ="1" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center"  />
-        <TextBlock Text="{Binding Password}" FontSize="20" Foreground="#FF555555" Height="40" Grid.Column="1" Grid.Row ="2" Width="200" />
+        <TextBox Text="{Binding Login}"  FontSize="20" Foreground="#FF555555" Height="40" Grid.Column="1" Grid.Row ="1" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center"  />
+        <TextBox Text="{Binding Password}" FontSize="20" Foreground="#FF555555" Height="40" Grid.Column="1" Grid.Row ="2" Width="200" />
         <Button BorderThickness="0" Content="Войти" Foreground="White" Background="#FF2027BC" FontSize="20" Grid.Column="1" Grid.Row ="3"  Width="200" Height="40">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
@@ -37,7 +37,13 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button  BorderThickness="0" Content="Регистрироваться" Click="Button_Click" Foreground="#2027BC" FontSize="20" Grid.Column="1" Grid.Row ="4" Width="200" Height="40" Background="White" VerticalAlignment="Top"/>
-       
+        <Button  BorderThickness="0"  Click="Button_Click" Foreground="#2027BC" FontSize="20" Grid.Column="1" Grid.Row ="4" Width="200" Height="40" Background="White" VerticalAlignment="Top">
+            <TextBlock>
+        <Underline>
+            Регистрироваться
+        </Underline>
+            </TextBlock>
+        </Button>
+
     </Grid>
 </Window>

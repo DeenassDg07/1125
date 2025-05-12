@@ -18,13 +18,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition />
-            <RowDefinition Height="15"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Общая сумма:" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#2027BC" FontSize="20"/>
         <TextBox Grid.Row="3" Grid.Column="2" Height="35" Width="165" VerticalAlignment="Center" />
-        <Button Grid.Row="3" Grid.Column="4" Height="35" Width="165" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Content="Войти" Foreground="White" Background="#FF2027BC">
+        <Button BorderThickness="0" Grid.Row="3" Grid.Column="4" Height="35" Width="165" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Content="Войти" Foreground="White" Background="#FF2027BC">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border 
@@ -39,7 +39,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Grid.Row="3" Grid.Column="3" Height="35" Width="165" VerticalAlignment="Center" HorizontalAlignment="Right
+        <Button BorderThickness="0" Grid.Row="3" Grid.Column="3" Height="35" Width="165" VerticalAlignment="Center" HorizontalAlignment="Right
                 " FontSize="20" Content="Назад" Foreground="White" Background="#FF2027BC">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
@@ -55,5 +55,8 @@
                 </ControlTemplate>
             </Button.Template>
             </Button>
+        <ListBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4">
+            
+        </ListBox>
     </Grid >
 </Window>

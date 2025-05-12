@@ -33,13 +33,20 @@
         </Grid.RowDefinitions>
         
         <TextBlock Text="Поиск:" Grid.Row="1" Grid.Column="1" FontSize="20"/>
-        <DataGrid Grid.Column="2" Grid.Row="1" Width="220" HorizontalAlignment="Left" Background="#FF2027BC" SelectionChanged="DataGrid_SelectionChanged" Height="30" Margin="10,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.503,0.182" />
-        <Button Grid.Column="3" Grid.Row="1" Width="50" HorizontalAlignment="Left">
+        <ComboBox Grid.Column="2" Grid.Row="1" Width="220" HorizontalAlignment="Left"  SelectionChanged="DataGrid_SelectionChanged" Height="30" Margin="10,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.503,0.182" >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FF2027BC" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Button BorderThickness="0" Grid.Column="3" Grid.Row="1" Width="50" HorizontalAlignment="Left">
             <Button.Background>
                 <ImageBrush ImageSource="/View/Снимок экрана 2025-05-10 195229.png"/>
             </Button.Background>
         </Button>
-        <Button Width="180" Height="35" HorizontalAlignment="Left" VerticalAlignment="Top"  Grid.Row="2" Grid.Column="1" Background="#FF2027BC" Foreground="White" Content="Назад" FontSize="20"/>
+        <Button BorderThickness="0" Width="180" Height="35" HorizontalAlignment="Left" VerticalAlignment="Top"  Grid.Row="2" Grid.Column="1" Background="#FF2027BC" Foreground="White" Content="Назад" FontSize="20"/>
         <TextBlock Text="Цена" FontSize="20" Foreground="#2027BC" Grid.Row="1" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBox Grid.Row="2" Grid.Column="5" Width="200" Height="28" />
         <TextBlock Text="Кол-во шт." FontSize="20" Foreground="#2027BC" Grid.Row="3" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -49,9 +56,9 @@
         <TextBlock Text="Название" FontSize="20" Foreground="#2027BC" Grid.Row="7" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBox Grid.Row="8" Grid.Column="5" Width="200" Height="28" />
         <TextBlock Text="Изображение" FontSize="20" Foreground="#2027BC" Grid.Row="9" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button Grid.Row="10" Grid.Column="5" Width="200" Height="28" Content="..." Foreground="White" FontSize="20" BorderThickness="0" Background="#FF2027BC"/>
+        <Button  Grid.Row="10" Grid.Column="5" Width="200" Height="28" HorizontalContentAlignment="Right" Content="..." Foreground="White" FontSize="20" BorderThickness="0" Background="#FF2027BC"/>
         <StackPanel Grid.Row="11" Grid.Column="5" Orientation="Horizontal" HorizontalAlignment="Center" >
-            <Button Content="Редактировать" Height="30" Width="115" Margin="15,0 " Foreground="White" FontSize="14" Background="#FF2027BC">
+            <Button BorderThickness="0"  Content="Редактировать" Height="30" Width="115" Margin="15,0 " Foreground="White" FontSize="14" Background="#FF2027BC">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border 
@@ -66,7 +73,7 @@ CornerRadius="20">
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button  Content="Добавить"  Height="30" Width="115" Margin="15,0 " Foreground="White" FontSize="14" Background="#FF2027BC">
+            <Button BorderThickness="0" Content="Добавить"  Height="30" Width="115" Margin="15,0 " Foreground="White" FontSize="14" Background="#FF2027BC">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border 
@@ -82,6 +89,8 @@ CornerRadius="20">
                 </Button.Template>
             </Button>
         </StackPanel>
-       
+        <ListBox Grid.Row="3" Grid.RowSpan="9" Grid.Column="1" Grid.ColumnSpan="3">
+           
+        </ListBox>
     </Grid>
 </Window>

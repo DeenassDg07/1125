@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 namespace _1125.View
 {
     /// <summary>
-    /// Логика взаимодействия для ProductsWindow.xaml
+    /// Логика взаимодействия для Window1.xaml
     /// </summary>
-    public partial class ProductsWindow : Window
+    public partial class Window1 : Window
     {
-        public ProductsWindow()
+        public Window1()
         {
             InitializeComponent();
         }
-
-        
     }
 }

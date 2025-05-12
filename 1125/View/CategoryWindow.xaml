@@ -21,11 +21,41 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Пылесос" Grid.Column="1"  Grid.Row="1" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
-        <Button Content="Микроволновка" Grid.Column="1"  Grid.Row="2" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
-        <Button Content="Холодильник" Grid.Column="1"  Grid.Row="3" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
-        <Button Content="Телевизор" Grid.Column="1"  Grid.Row="4" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
-        <Button Content="Телефон" Grid.Column="1"  Grid.Row="5" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0"/>
+        <Button Grid.Column="1"  Grid.Row="1" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
+            <TextBlock>
+                <Underline>
+                    Пылесос
+                </Underline>
+            </TextBlock>
+        </Button>
+        <Button Grid.Column="1"  Grid.Row="2" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
+            <TextBlock>
+        <Underline>
+            Микроволновка
+        </Underline>
+            </TextBlock>
+        </Button>
+        <Button  Grid.Column="1"  Grid.Row="3" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
+            <TextBlock>
+    <Underline>
+    Холодильник
+    </Underline>
+        </TextBlock>
+        </Button>
+        <Button  Grid.Column="1"  Grid.Row="4" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
+            <TextBlock>
+    <Underline>
+        Телевизор
+    </Underline>
+            </TextBlock>
+        </Button>
+        <Button Grid.Column="1"  Grid.Row="5" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0">
+            <TextBlock>
+    <Underline>
+     Телефон
+    </Underline>
+            </TextBlock>
+        </Button>
 
     </Grid>
 </Window>
