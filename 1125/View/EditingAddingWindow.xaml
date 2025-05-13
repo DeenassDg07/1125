@@ -27,15 +27,61 @@
                 <ComboBox  Width="250" Height="35"  />
             </StackPanel>
 
-            <Button BorderThickness="0" Grid.Row="2" Grid.Column="1" Width="150" HorizontalAlignment="Left" Background="#FF2027BC" Foreground="White" Content="Назад" FontSize="20"/>
+            <Button BorderThickness="0" Grid.Row="2" Grid.Column="1" Width="150" HorizontalAlignment="Left" Background="#FF2027BC" Foreground="White" Content="Назад" FontSize="20" />
             <TextBlock Text="Цена" FontSize="20" Foreground="#2027BC" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <Border BorderBrush="#2027BC" BorderThickness="4" Grid.Row="2" Grid.Column="2" Width="200" Height="35" >
                 <TextBox/>
             </Border>
             <StackPanel Grid.Row="3" Grid.Column="2">
-                
+                <TextBlock Text="Кол-во шт." FontSize="20" Foreground="#2027BC"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Border BorderBrush="#2027BC" BorderThickness="4"  Width="200" Height="35" >
+                    <TextBox/>
+                </Border>
+                <TextBlock Text="Описание" FontSize="20" Foreground="#2027BC"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Border BorderBrush="#2027BC" BorderThickness="4"  Width="200" Height="60" >
+                    <TextBox/>
+                </Border>
+                <TextBlock Text="Название" FontSize="20" Foreground="#2027BC"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Border BorderBrush="#2027BC" BorderThickness="4"  Width="200" Height="35" >
+                    <TextBox/>
+                </Border>
+                <TextBlock Text="Изображение" FontSize="20" Foreground="#2027BC"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Button Width="200" Height="35" Foreground="White" Background="#FF2027BC" Content="..." FontSize="25" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
+                <StackPanel Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="0,15,0,0">
+                    <Button FontSize="15" BorderThickness="0" Width="130" Height="35" Foreground="White" Background="#FF2027BC" Content="Редактировать" Margin="0,0,10,0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border 
+Background="{TemplateBinding Background}"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}"
+CornerRadius="20">
+                                    <ContentPresenter 
+    HorizontalAlignment="Center" 
+    VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button FontSize="15" BorderThickness="0" Width="130" Height="35" Foreground="White" Background="#FF2027BC" Content="Добавить">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border 
+Background="{TemplateBinding Background}"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}"
+CornerRadius="20">
+                                    <ContentPresenter 
+    HorizontalAlignment="Center" 
+    VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
             </StackPanel>
 
+            
         </Grid>
     </Border>
 </Window>
