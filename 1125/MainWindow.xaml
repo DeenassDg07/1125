@@ -62,8 +62,8 @@
 			<StackPanel.Background>
 				<ImageBrush/>
 			</StackPanel.Background>
-			<Button Content="Гость" Style="{StaticResource RoundedButton}"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="35" Width="140" Click="Button_Click" />
-			<Button Content="Пользователь" Style="{StaticResource RoundedButton}"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="35" Width="140" />
+			<Button Content="Гость" Style="{StaticResource RoundedButton}"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="35" Width="140" Margin="0,0,0,5"/>
+            <Button Content="Пользователь" Style="{StaticResource RoundedButton}" Command="{Binding OpenLogin}" VerticalAlignment="Center" HorizontalAlignment="Center" Height="35" Width="140" Margin="0,0,0,5"/>
 			<Button Content="Директор" Style="{StaticResource RoundedButton}"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="35" Width="140" />
 		</StackPanel>
 

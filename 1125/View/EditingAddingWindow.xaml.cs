@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1125.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace _1125.View
         public EditingAddingWindow()
         {
             InitializeComponent();
+            DataContext = new EditingAddingWindowViewModel();
         }
     }
 }

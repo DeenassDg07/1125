@@ -77,7 +77,7 @@ namespace _1125.Model
                         int id = dr.GetInt32(0);
                         string description = string.Empty;
 
-                        if (!dr.IsDBNull(1))
+                        if (!dr.IsDBNull("description"))
                             description = dr.GetString("description");
                         string name = dr.GetString("name");
                         int availability = dr.GetInt32("availability");
