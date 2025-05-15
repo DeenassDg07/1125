@@ -1,4 +1,5 @@
-﻿using MySqlConnector;
+﻿using _1125.Model;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace _1125.Model
+namespace _1125.DB
 {
     internal class ProductDB
     {
@@ -15,7 +16,7 @@ namespace _1125.Model
 
         private ProductDB(DBConnection db)
         {
-            this.connection = db;
+            connection = db;
         }
 
         public bool Insert(Product product)
@@ -28,14 +29,14 @@ namespace _1125.Model
             {
                 MySqlCommand cmd = connection.CreateCommand("insert into `product` Values (0, @name, @description, @availability, @price);select LAST_INSERT_ID();");
 
-   
+
                 cmd.Parameters.Add(new MySqlParameter("name", product.Name));
                 cmd.Parameters.Add(new MySqlParameter("description", product.Description));
                 cmd.Parameters.Add(new MySqlParameter("availability", product.Availability));
-                cmd.Parameters.Add(new MySqlParameter("price", product.Price));  
+                cmd.Parameters.Add(new MySqlParameter("price", product.Price));
                 try
                 {
-                  
+
                     int id = (int)(ulong)cmd.ExecuteScalar();
                     if (id > 0)
                     {
@@ -156,7 +157,7 @@ namespace _1125.Model
         public static ProductDB GetDb()
         {
             if (db == null)
-                db = new ProductDB (DBConnection.GetDbConnection());
+                db = new ProductDB(DBConnection.GetDbConnection());
             return db;
         }
     }

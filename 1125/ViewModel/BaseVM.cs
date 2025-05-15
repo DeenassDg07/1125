@@ -6,9 +6,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1125.VMTools
-    {
-    public class BaseVM : INotifyPropertyChanged
+namespace _1125.ViewModel
+{
+   public class BaseVM : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void Signal([CallerMemberName] string name = null) =>

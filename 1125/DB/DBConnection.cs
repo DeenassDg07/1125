@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace _1125.Model
+namespace _1125.DB
 {
     internal class DBConnection
     {

@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using MySqlConnector;
 using System.Windows;
+using _1125.Model;
 
-namespace _1125.Model
+namespace _1125.DB
 {
     internal class UserDB
     {
@@ -14,7 +15,7 @@ namespace _1125.Model
 
         private UserDB(DBConnection db)
         {
-            this.connection = db;
+            connection = db;
         }
 
         public bool Insert(User user)
@@ -28,7 +29,7 @@ namespace _1125.Model
                 MySqlCommand cmd = connection.CreateCommand("insert into `user` Values (0, @login, @password);select LAST_INSERT_ID();");
                 cmd.Parameters.Add(new MySqlParameter("login", user.Login));
                 cmd.Parameters.Add(new MySqlParameter("password", user.Password));
-                
+
                 try
                 {
 

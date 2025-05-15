@@ -31,7 +31,7 @@
                 <ComboBox  Width="245" Height="35" />
                 <Button Width="50" BorderThickness="0">
                     <Button.Background>
-                        <ImageBrush ImageSource="/View/Снимок экрана 2025-05-10 195229.png"/>
+                        <ImageBrush ImageSource="/Image/Снимок экрана 2025-05-10 195229.png"/>
                     </Button.Background>
                 </Button>
             </StackPanel>

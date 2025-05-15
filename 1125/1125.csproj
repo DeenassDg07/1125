@@ -19,8 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="5247164926118720603.jpg" />
-    <Resource Include="View\Снимок экрана 2025-05-10 195229.png" />
+    <Resource Include="Image\5247164926118720603.jpg" />
+    <Resource Include="Image\Снимок экрана 2025-05-10 195229.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="VMTools\" />
   </ItemGroup>
 
 </Project>

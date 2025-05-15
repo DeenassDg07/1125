@@ -6,13 +6,7 @@
         xmlns:local="clr-namespace:_1125.View"
         mc:Ignorable="d"
         Title="EditingAddingWindow" Height="450" Width="1000">
-    <Window.Resources>
-    <Style x:Key="WhiteComboBoxStyle" TargetType="ComboBox">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="#2027BC"/>
-            <Setter Property="BorderBrush" Value="#2027BC"/>
-    </Style>
-    </Window.Resources>
+ 
 
     <Border BorderBrush="#2027BC" BorderThickness="15">
         <Grid>
@@ -32,7 +26,7 @@
                 <Border BorderBrush="#2027BC" BorderThickness="3" Width="370" Height="35" Margin="0,0,15,0">
                     <TextBox Width="360" Text="Поиск:" HorizontalAlignment="Left" Height="33" VerticalAlignment="Center" FontSize="20"  />
                 </Border>
-                <ComboBox  Width="250" Style="{StaticResource WhiteComboBoxStyle}"  >
+                <ComboBox  Width="250" >
                     <ComboBoxItem Content="Недорогие"/>
                     <ComboBoxItem Content="Дорогие"/>
                     <ComboBoxItem Content="Популярные"/>

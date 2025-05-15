@@ -48,11 +48,11 @@
 		</Style>
 	</Window.Resources>
 	<Window.Background>
-		<ImageBrush ImageSource="/5247164926118720603.jpg"/>
+		<ImageBrush ImageSource="Image/5247164926118720603.jpg"/>
 	</Window.Background>
 	<Grid HorizontalAlignment="Stretch" Height="NaN" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="NaN">
 		<Grid.Background>
-			<ImageBrush ImageSource="/5247164926118720603.jpg"/>
+			<ImageBrush ImageSource="Image/5247164926118720603.jpg"/>
 		</Grid.Background>
 		<Grid.RowDefinitions>
 			<RowDefinition/>

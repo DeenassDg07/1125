@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1125.Model
+namespace _1125.ViewModel
 {
-    internal class ProductTimageDB
+    internal class RegistrationVM
     {
-
     }
 }
