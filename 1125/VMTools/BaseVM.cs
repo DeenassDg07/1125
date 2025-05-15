@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1125.ViewModel
+namespace _1125.VMTools
 {
    public class BaseVM : INotifyPropertyChanged
     {

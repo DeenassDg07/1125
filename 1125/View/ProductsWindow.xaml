@@ -29,14 +29,14 @@
                     <TextBox Width="350" Text="Поиск:" HorizontalAlignment="Left" Height="35" VerticalAlignment="Center" FontSize="20"   />
                 </Border>
                 <ComboBox  Width="245" Height="35" />
-                <Button Width="50" BorderThickness="0">
+                <Button Command="{Binding Baket}" Width="45" BorderThickness="0">
                     <Button.Background>
                         <ImageBrush ImageSource="/Image/Снимок экрана 2025-05-10 195229.png"/>
                     </Button.Background>
                 </Button>
             </StackPanel>
 
-            <Button BorderThickness="0" Grid.Row="2"  Width="150" HorizontalAlignment="Left" Background="#FF2027BC" Foreground="White" Content="Назад" FontSize="20" Margin="5,0,0,0"/>
+            <Button Command="{Binding Back}" BorderThickness="0" Grid.Row="2"  Width="150" HorizontalAlignment="Left" Background="#FF2027BC" Foreground="White" Content="Назад" FontSize="20" Margin="5,0,0,0"/>
             <ScrollViewer Grid.Row="3">
                 <ListBox  >
                     <ListBox.ItemTemplate>

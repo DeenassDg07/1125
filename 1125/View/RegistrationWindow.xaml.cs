@@ -22,6 +22,7 @@ namespace _1125.View
         public RegistrationWindow()
         {
             InitializeComponent();
+          
         }
     }
 }

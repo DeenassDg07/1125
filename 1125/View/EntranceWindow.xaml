@@ -44,7 +44,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Command="{Binding Registration}" BorderThickness="0" Foreground="#2027BC" FontSize="20" Grid.Column="1" Grid.Row ="4" Width="200" Height="40" Background="White" VerticalAlignment="Center">
+            <Button Command="{Binding Registration}" IsEnabled="{Binding CanRegister}" BorderThickness="0" Foreground="#2027BC" FontSize="20" Grid.Column="1" Grid.Row ="4" Width="200" Height="40" Background="White" VerticalAlignment="Center">
                 <TextBlock>
         <Underline>
             Регистрироваться

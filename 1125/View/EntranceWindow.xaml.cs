@@ -1,4 +1,5 @@
-﻿using _1125.ViewModel;
+﻿using _1125.Model;
+using _1125.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,10 @@ namespace _1125.View
         public EntranceWindow()
         {
             InitializeComponent();
-          
+            DataContext = new EntranceVM();
+            var newUser = new User { Role = "user" };
+            ((EntranceVM)DataContext).CurrentUser = newUser;
+
         }
     }
 }

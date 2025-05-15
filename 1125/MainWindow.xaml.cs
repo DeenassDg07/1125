@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using _1125.Model;
 using _1125.View;
 using _1125.ViewModel;
 
@@ -22,6 +23,7 @@ namespace _1125
         {
             InitializeComponent();
             DataContext = new MainVM();
+            
         }
     }
 }
