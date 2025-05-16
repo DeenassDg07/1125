@@ -21,12 +21,11 @@ namespace _1125.View
     /// </summary>
     public partial class EntranceWindow : Window
     {
-        public EntranceWindow()
+        public EntranceWindow(bool canRegister)
         {
             InitializeComponent();
-            DataContext = new EntranceVM();
-            var newUser = new User { Role = "user" };
-            ((EntranceVM)DataContext).CurrentUser = newUser;
+            DataContext = new EntranceVM(canRegister);
+            
 
         }
     }

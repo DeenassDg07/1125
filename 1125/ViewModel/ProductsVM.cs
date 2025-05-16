@@ -14,8 +14,13 @@ namespace _1125.ViewModel
         public ICommand Back { get; set; }
         public ICommand Baket { get; set; }
 
-        public ProductsVM()
+        public ProductsVM(string productType)
         {
+            if (!string.IsNullOrEmpty(productType))
+            {
+                Search(productType);
+            }
+
             Back = new CommandVM(() =>
             {
                 CategoryWindow categoryWindow = new CategoryWindow();
@@ -30,6 +35,12 @@ namespace _1125.ViewModel
                 basketWindow.ShowDialog();
             }, () => true);
         }
+
+        private void Search(string productType)
+        {
+            
+        }
+
         Action close;
         internal void SetClose(Action close)
         {

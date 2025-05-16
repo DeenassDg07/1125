@@ -16,6 +16,7 @@ namespace _1125.ViewModel
     {
 
         public ICommand OpenLogin { get; set; }
+        public ICommand OpenLoginDirector { get; set; }
         public ICommand Category { get; set; }
         
 
@@ -30,10 +31,18 @@ namespace _1125.ViewModel
 
             OpenLogin = new CommandVM(() =>
             {
-                EntranceWindow entranceWindow = new EntranceWindow();
+                EntranceWindow entranceWindow = new EntranceWindow(true);
                 close?.Invoke();
                 entranceWindow.ShowDialog();
             }, () => true);
+
+            OpenLoginDirector = new CommandVM(() =>
+            {
+                EntranceWindow entranceWindow = new EntranceWindow(false);
+                close?.Invoke();
+                entranceWindow.ShowDialog();
+            }, () => true);
+
         }
         Action close;
         internal void SetClose(Action close)

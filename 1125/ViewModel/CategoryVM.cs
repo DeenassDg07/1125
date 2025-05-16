@@ -21,7 +21,7 @@ namespace _1125.ViewModel
         {
             ProductsVacuumСleaner = new CommandVM(() =>
             {
-                ProductsWindow productsWindow = new ProductsWindow();
+                ProductsWindow productsWindow = new ProductsWindow("Пылесос");
                 close?.Invoke();
                 productsWindow.ShowDialog();
             }, () => true);

@@ -14,42 +14,12 @@ namespace _1125.ViewModel
 {
     internal class EntranceVM : BaseVM
     {
-        private User currentUser;
-        public User CurrentUser
+        public EntranceVM(bool canRegister)
         {
-            get => currentUser;
-            set
-            {
-                currentUser = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(CanRegister));
-            }
+            CanRegister = canRegister;
         }
-        public bool CanRegister => CurrentUser?.Role == "user";
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        } 
-
-        public ICommand Registration { get; set; }
-        public EntranceVM()
-
-
-        {
-            Registration = new CommandVM(() =>
-            {
-                RegistrationWindow registrationWindow = new RegistrationWindow();
-                close?.Invoke();
-                registrationWindow.ShowDialog();
-            }, () => true);
-        }
-        Action close;
-        internal void SetClose(Action close)
-        {
-            this.close = close;
-        }
+        public bool CanRegister { get; }
     }
 }
 
