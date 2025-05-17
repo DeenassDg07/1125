@@ -14,11 +14,6 @@ namespace _1125.ViewModel
 {
     internal class EntranceVM : BaseVM
     {  
-        public EntranceVM(bool canRegister)
-        {
-            CanRegister = canRegister;
-        }
-        public bool CanRegister { get; }
         public ICommand Registration { get; set; }
 
         public EntranceVM()
@@ -26,10 +21,17 @@ namespace _1125.ViewModel
             Registration = new CommandVM(() =>
                 {
                     RegistrationWindow registrationWindow = new RegistrationWindow();
+                    registrationWindow.Show();
                     close?.Invoke();
                     registrationWindow.ShowDialog();
                 }, () => true);
         }
+        public EntranceVM(bool canRegister)
+        {
+            CanRegister = canRegister;
+        }
+        public bool CanRegister { get; }
+        
         Action close;
         internal void SetClose(Action close)
         {

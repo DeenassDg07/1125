@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 using MySqlConnector;
 using System.Windows;
 using _1125.Model;
+using System.Data;
+using System.Data.Common;
 
 namespace _1125.DB
 {
-    internal class UserDB
+    public class UserDB
     {
         DBConnection connection;
 
         private UserDB(DBConnection db)
         {
-            connection = db;
+            this.connection = db;
         }
 
-        public bool Insert(User user)
+
+        public bool Insert(User User)
         {
             bool result = false;
             if (connection == null)
@@ -26,9 +29,14 @@ namespace _1125.DB
 
             if (connection.OpenConnection())
             {
-                MySqlCommand cmd = connection.CreateCommand("insert into `user` Values (0, @login, @password);select LAST_INSERT_ID();");
-                cmd.Parameters.Add(new MySqlParameter("login", user.Login));
-                cmd.Parameters.Add(new MySqlParameter("password", user.Password));
+                MySqlCommand cmd = connection.CreateCommand("insert into `user` Values (0, @login, @password );select LAST_INSERT_ID();");
+
+
+
+                cmd.Parameters.Add(new MySqlParameter("login", User.Login));
+               
+                cmd.Parameters.Add(new MySqlParameter("password", User.Password));
+
 
                 try
                 {
@@ -37,12 +45,12 @@ namespace _1125.DB
                     if (id > 0)
                     {
                         MessageBox.Show(id.ToString());
-                        user.Id = id;
+                        User.Id = id;
                         result = true;
                     }
                     else
                     {
-                        MessageBox.Show("Запись не добавлена");
+                        MessageBox.Show("Пользователь не добавлен");
                     }
                 }
                 catch (Exception ex)
@@ -56,28 +64,34 @@ namespace _1125.DB
 
         internal List<User> SelectAll()
         {
-            List<User> users = new List<User>();
+            List<User> user = new List<User>();
             if (connection == null)
-                return users;
+                return user;
 
             if (connection.OpenConnection())
             {
-                var command = connection.CreateCommand("select `id`, `login`, `password` from `user` ");
+                var command = connection.CreateCommand("select `id`, `login`, `Password` from `user` ");
                 try
                 {
                     MySqlDataReader dr = command.ExecuteReader();
+
                     while (dr.Read())
                     {
                         int id = dr.GetInt32(0);
                         string login = string.Empty;
                         if (!dr.IsDBNull(1))
                             login = dr.GetString("login");
-                        string password = dr.GetString("password");
-                        users.Add(new User
+                        string password = null;
+                        if (!dr.IsDBNull(2))
+                            password = dr.GetString("password");
+
+
+
+                        user.Add(new User
                         {
                             Id = id,
-                            Login = login,
-                            Password = password
+                            Login = login,                       
+                            Password = password,
                         });
                     }
                 }
@@ -87,9 +101,8 @@ namespace _1125.DB
                 }
             }
             connection.CloseConnection();
-            return users;
+            return user;
         }
-
         internal bool Update(User edit)
         {
             bool result = false;
@@ -98,10 +111,9 @@ namespace _1125.DB
 
             if (connection.OpenConnection())
             {
-                var mc = connection.CreateCommand($"update `user` set `login`=@login, `password`=@password where `id` = {edit.Id}");
-                mc.Parameters.Add(new MySqlParameter("login", edit.Login));
+                var mc = connection.CreateCommand($"update `user` set `login`=@Login, `password`=@Password where `ID` = {edit.Id}");
+                mc.Parameters.Add(new MySqlParameter("login", edit.Login));           
                 mc.Parameters.Add(new MySqlParameter("password", edit.Password));
-
                 try
                 {
                     mc.ExecuteNonQuery();
@@ -115,6 +127,7 @@ namespace _1125.DB
             connection.CloseConnection();
             return result;
         }
+
         internal bool Remove(User remove)
         {
             bool result = false;
@@ -145,5 +158,6 @@ namespace _1125.DB
                 db = new UserDB(DBConnection.GetDbConnection());
             return db;
         }
+    
     }
 }

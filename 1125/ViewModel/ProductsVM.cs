@@ -13,6 +13,8 @@ namespace _1125.ViewModel
     {
         public ICommand Back { get; set; }
         public ICommand Baket { get; set; }
+       
+        public bool CanRegister { get; }
 
         public ProductsVM(string productType)
         {

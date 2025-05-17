@@ -309,8 +309,13 @@
                 <Border BorderBrush="#2027BC" BorderThickness="3" Width="350" Height="35" Margin="5,0,15,0">
                     <TextBox Width="350" Text="Поиск:" HorizontalAlignment="Left" Height="35" VerticalAlignment="Center" FontSize="20"   />
                 </Border>
-                <ComboBox Style="{DynamicResource ComboBoxStyle1}" Width="245" Height="35" />
-                <Button Command="{Binding Baket}" Width="45" BorderThickness="0">
+                <ComboBox Style="{DynamicResource ComboBoxStyle1}" Width="245" Height="35" >
+                    <ComboBoxItem Content="Недорогие"/>
+                    <ComboBoxItem Content="Дорогие"/>
+                    <ComboBoxItem Content="Популярные"/>
+                    <ComboBoxItem Content="Менее популярные"/>
+                </ComboBox>
+                <Button Command="{Binding Baket}" IsEnabled="{Binding CanBaket}" Width="45" BorderThickness="0">
                     <Button.Background>
                         <ImageBrush ImageSource="/Image/Снимок экрана 2025-05-10 195229.png"/>
                     </Button.Background>

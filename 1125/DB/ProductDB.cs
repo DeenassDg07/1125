@@ -3,6 +3,7 @@ using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,9 @@ namespace _1125.DB
         }
         internal List<Product> SelectAll()
         {
-            List<Product> clients = new List<Product>();
+            List<Product> product = new List<Product>();
             if (connection == null)
-                return clients;
+                return product;
 
             if (connection.OpenConnection())
             {
@@ -35,18 +36,24 @@ namespace _1125.DB
                     while (dr.Read())
                     {
                         int id = dr.GetInt32(0);
+                        string name = string.Empty;
+                        if (!dr.IsDBNull(1))
+                            name = dr.GetString("name");
                         string description = string.Empty;
-
-                        if (!dr.IsDBNull("description"))
+                        if (!dr.IsDBNull(2))
                             description = dr.GetString("description");
-                        string name = dr.GetString("name");
-                        int availability = dr.GetInt32("availability");
-                        decimal price = dr.GetDecimal("price");
-                        clients.Add(new Product
+                        int availability = 0;
+                        if (!dr.IsDBNull(3))
+                            availability = dr.GetInt32("availability");
+                        int price = 0;
+                        if (!dr.IsDBNull(4))
+                            price = dr.GetInt32("Price");
+
+                        product.Add(new Product
                         {
                             Id = id,
-                            Description = description,
                             Name = name,
+                            Description = description,
                             Availability = availability,
                             Price = price
                         });
@@ -58,7 +65,7 @@ namespace _1125.DB
                 }
             }
             connection.CloseConnection();
-            return clients;
+            return product;
         }
 
         static ProductDB db;

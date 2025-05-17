@@ -21,6 +21,10 @@ namespace _1125.View
     {
         public RegistrationWindow()
         {
+        }
+
+        public RegistrationWindow(bool v)
+        {
             InitializeComponent();
           
         }

@@ -20,12 +20,13 @@ namespace _1125.View
     /// </summary>
     public partial class ProductsWindow : Window
     {
+        
         public ProductsWindow(string productType)
         {
             InitializeComponent();
             var vm = new ProductsVM(productType);
             vm.SetClose(Close);
-            DataContext = vm;
+            DataContext = vm;          
         }
 
         

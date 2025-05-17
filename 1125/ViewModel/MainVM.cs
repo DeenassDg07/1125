@@ -18,8 +18,6 @@ namespace _1125.ViewModel
         public ICommand OpenLogin { get; set; }
         public ICommand OpenLoginDirector { get; set; }
         public ICommand Category { get; set; }
-        
-
         public MainVM()
         {
             Category = new CommandVM(() =>
