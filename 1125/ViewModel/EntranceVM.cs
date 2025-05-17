@@ -13,13 +13,28 @@ using _1125.VMTools;
 namespace _1125.ViewModel
 {
     internal class EntranceVM : BaseVM
-    {
+    {  
         public EntranceVM(bool canRegister)
         {
             CanRegister = canRegister;
         }
-
         public bool CanRegister { get; }
+        public ICommand Registration { get; set; }
+
+        public EntranceVM()
+        {
+            Registration = new CommandVM(() =>
+                {
+                    RegistrationWindow registrationWindow = new RegistrationWindow();
+                    close?.Invoke();
+                    registrationWindow.ShowDialog();
+                }, () => true);
+        }
+        Action close;
+        internal void SetClose(Action close)
+        {
+            this.close = close;
+        }
     }
 }
 

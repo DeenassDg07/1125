@@ -115,8 +115,6 @@ namespace _1125.DB
             connection.CloseConnection();
             return result;
         }
-
-
         internal bool Remove(User remove)
         {
             bool result = false;

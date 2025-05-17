@@ -28,28 +28,28 @@ namespace _1125.ViewModel
 
             ProductsMicrowave = new CommandVM(() =>
             {
-                ProductsWindow productsWindow = new ProductsWindow();
+                ProductsWindow productsWindow = new ProductsWindow("Микроволновка");
                 close?.Invoke();
                 productsWindow.ShowDialog();
             }, () => true);
 
             ProductsFridge = new CommandVM(() =>
             {
-                ProductsWindow productsWindow = new ProductsWindow();
+                ProductsWindow productsWindow = new ProductsWindow("Холодильник");
                 close?.Invoke();
                 productsWindow.ShowDialog();
             }, () => true);
 
             ProductsTV = new CommandVM(() =>
             {
-                ProductsWindow productsWindow = new ProductsWindow();
+                ProductsWindow productsWindow = new ProductsWindow("Телевизор");
                 close?.Invoke();
                 productsWindow.ShowDialog();
             }, () => true);
 
             ProductsTelephone = new CommandVM(() =>
             {
-                ProductsWindow productsWindow = new ProductsWindow();
+                ProductsWindow productsWindow = new ProductsWindow("Телефон");
                 close?.Invoke();
                 productsWindow.ShowDialog();
             }, () => true);

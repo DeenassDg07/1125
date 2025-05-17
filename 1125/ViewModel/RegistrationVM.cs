@@ -8,5 +8,6 @@ namespace _1125.ViewModel
 {
     internal class RegistrationVM
     {
+
     }
 }
